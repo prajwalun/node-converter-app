@@ -68,7 +68,7 @@ function Fileupload() {
           <br></br>
           {showText && (
             <div>
-              <a class="convert-btn" href="/processing">
+              <a class="convert-btn" href="/process">
                 Convert zu CSV
               </a>
             </div>
