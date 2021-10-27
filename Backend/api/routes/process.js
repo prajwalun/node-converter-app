@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.post("/upload", (req, res) => {
+router.post("/process", (req, res) => {
     const newpath = "./files/uploaded/";   
     const {file} = req.files;
     const filename = file.name;

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import arrow from "./../../Assets/Capa_1.png";
 import convert from "./../../Assets/Group 4.png";
 import icon1 from "./../../Assets/Group 5.png";
 import "./upload.css";
@@ -15,29 +14,19 @@ function Fileupload() {
         setFile(e.target.files[0]);
         setFileName(e.target.files[0].name);
     };
-    const uploadFile = async(e) => {
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("fileName", fileName);
-        try{
-            // Validating the file type
-            const filename = file.name;
-            const path = require("path");
-            const extension = path.extname(`${filename}`);
-            if(extension === ".asc"){
-            const res = await axios.post("http://localhost:5000/upload", formData);
-            alert("File has been uploaded");
-            setShowText(true);
-            console.log(true);
-            }
-            else{
-                alert("Select the correct file");
-            }
-
-        }catch(exc){
-            alert("Select the correct file");
-            console.log(exc);
-        }
+    const uploadFile = async (e) => {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("fileName", fileName);
+      try {
+        const res = await axios.post("http://localhost:5000/upload", formData);
+        alert("File Has been Uploaded");
+        setShowText(true);
+        console.log(res);
+      } catch (exc) {
+        alert("Select the correct file");
+        console.log(exc);
+      }
     };
     return (
         <div class="container">
