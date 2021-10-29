@@ -5,7 +5,7 @@ const app = express();
 const stream = require("stream");
 const fastcsv = require("fast-csv");
 const utf8 = require("utf8");
-const fileupload = require("express-fileupload");
+const fileUpload = require("express-fileupload");
 
 const uploadRoute = require("./api/routes/upload");
 const processRoute = require("./api/routes/process");
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 
 app.use(cors());
-app.use(fileupload());
+app.use(fileUpload());
 app.use(express.static("files"));
 
 
