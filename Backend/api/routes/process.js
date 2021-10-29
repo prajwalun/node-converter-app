@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post("/process", (req, res) => {
-    const newpath = "./files/uploaded/";   
+    const newpath = "../../Files/uploaded/";   
     const {file} = req.files;
     const filename = file.name;
     file.mv(`${newpath}${filename}`, (err) => {
